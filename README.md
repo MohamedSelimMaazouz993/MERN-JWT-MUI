@@ -25,7 +25,7 @@
 
 ### Details :
 
-- Frontend : React 19
+- Frontend : React 19 & Redux ( Auth Management )
 - Backend : Express.js
 - Database : MongoDb 
 - UI : Material UI
