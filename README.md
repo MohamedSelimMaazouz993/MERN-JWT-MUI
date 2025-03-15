@@ -22,3 +22,10 @@
   npm install 
   npm run dev
 ```
+
+### Details :
+
+- Frontend : React 19
+- Backend : Express.js
+- Database : MongoDb 
+- UI : Material UI
