@@ -27,7 +27,7 @@
 
 - Frontend : React 19 & Redux ( Auth Management )
 - Security : JWT & 2FA ( Google Authenticator)
-- Functionalities : 2FA Setup & Verify & Forget Password ( SMTP)
+- Functionalities : 2FA Setup & Verify & Forget Password ( SMTP) , PWA ( multiplatform you can install in android Phones , IPhone, PC , ect... )
 - Backend : Express.js
 - Database : MongoDb 
 - UI : Material UI
