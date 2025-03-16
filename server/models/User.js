@@ -10,7 +10,9 @@ const UserSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   role: { type: String, enum: ['user', 'moderator', 'admin'], default: 'user' },
-  tokens: [tokenSchema], // Array of tokens
+  tokens: [tokenSchema], // Array of tokens (for JWT tokens)
+  resetToken: { type: String }, // Field for password reset token
+  secret: { type: String }, // 2FA secret
 });
 
 // Hash password before saving

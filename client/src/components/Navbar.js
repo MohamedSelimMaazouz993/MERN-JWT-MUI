@@ -6,32 +6,32 @@ import { logout } from '../redux/slices/authSlice';
 import { Home, Person, Group, ExitToApp } from '@mui/icons-material';
 
 const Navbar = () => {
-  const { user } = useSelector((state) => state.auth); 
+  const { user, isAuthenticated } = useSelector((state) => state.auth); // Add isAuthenticated
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    dispatch(logout());
-    navigate('/login'); 
+    dispatch(logout()); // Dispatch the logout action
+    navigate('/login'); // Redirect to the login page
   };
 
   return (
     <AppBar position='static'>
       <Toolbar>
         <Typography variant='h6' sx={{ flexGrow: 1 }}>
-          <Button color='white' component={Link} to='/' startIcon={<Home />}>
+          <Button color='inherit' component={Link} to='/' startIcon={<Home />}>
             MERN JWT App
           </Button>
         </Typography>
 
-        {user ? (
+        {isAuthenticated && user ? ( // Check both isAuthenticated and user
           <>
             <Typography variant='subtitle1' sx={{ marginRight: 2 }}>
               Welcome, {user.username}! ({user.role})
             </Typography>
 
             <Button
-              color='white'
+              color='inherit'
               component={Link}
               to='/profile'
               startIcon={<Person />}
@@ -41,7 +41,7 @@ const Navbar = () => {
 
             {(user.role === 'admin' || user.role === 'moderator') && (
               <Button
-                color='white'
+                color='inherit'
                 component={Link}
                 to='/user-management'
                 startIcon={<Group />}
@@ -50,16 +50,16 @@ const Navbar = () => {
               </Button>
             )}
 
-            <IconButton color='white' onClick={handleLogout}>
+            <IconButton color='inherit' onClick={handleLogout}>
               <ExitToApp />
             </IconButton>
           </>
         ) : (
           <>
-            <Button color='white' component={Link} to='/register'>
+            <Button color='inherit' component={Link} to='/register'>
               Register
             </Button>
-            <Button color='white' component={Link} to='/login'>
+            <Button color='inherit' component={Link} to='/login'>
               Login
             </Button>
           </>

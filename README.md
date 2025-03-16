@@ -26,6 +26,8 @@
 ### Details :
 
 - Frontend : React 19 & Redux ( Auth Management )
+- Security : JWT & 2FA ( Google Authenticator)
+- Functionalities : 2FA Setup & Verify & Forget Password ( SMTP)
 - Backend : Express.js
 - Database : MongoDb 
 - UI : Material UI
